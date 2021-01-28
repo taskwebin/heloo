@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet " href="index.css" />
+    <title>Document</title>
+  </head>
+  <body style="border: 3px solid grey; padding: 40px; margin: auto; width: 60%">
+    <form id="myform">
+      <label for="department">Requesting Department</label>
+      <input type="text" id="department" name="department" /><br /><br />
+      <label for="dates">Date Requested</label>
+      <input type="date" id="dates" /><br /><br />
+      <label for="title">Postition / Title</label>
+      <input type="text" id="title" /><br /><br />
+      <label for="dater">Date Required</label>
+      <input type="date" id="dater" name="Date Required" /><br /><br />
+      <form id="emp-typ">
+        <label for="type">Employment Type</label><br /><br />
+        <input type="radio" id="name" name="type" value="Student Trainee" />
+        <label for="name">Student Trainee</label><br />
+        <input type="radio" id="female" name="type" value="female" />
+        <label for="female">Project Hire</label><br />
+        <input type="radio" id="other" name="type" value="other" />
+        <label for="other">Contractual</label><br />
+        <input type="radio" id="other" name="type" value="other" />
+        <label for="other">Regular</label><br /><br />
+      </form>
+
+      <label for="job-spec">Job Specification</label><br />
+      <input type="text" id="job-spec" /><br /><br />
+
+      <label for="reason">Reason for Vacancy</label><br />
+      <input type="text" id="reason" /><br /><br />
+
+      <div>
+        <label for="breif"
+          >Brief description of Duties/ Attach the Job Description</label
+        ><br />
+        <input type="text" id="brief" /><br /><br />
+      </div>
+      <div>
+        <label for="lname">Nature of Request</label><br />
+        <select name="cars" id="cars">
+          <option value="New">New</option>
+          <option value="Addition">Addition</option>
+          <option value="Replacement">Replacement</option></select
+        ><br /><br />
+      </div>
+      <div>
+        <label for="age">Age Range</label><br />
+        <input type="number" id="age" /><br /><br />
+      </div>
+      <div>
+        <label for="status"> Status</label><br />
+        <select id="status">
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <br /><br />
+        </select>
+      </div>
+      <div>
+        <label for="gender">Gender</label><br />
+        <select id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div>
+        <label for="gender">Experience</label><br />
+        <select id="gender">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </form>
+
+    <h1>APPROVALS</h1>
+    <form>
+      <div>
+        <label for="request">Requested by</label>
+        <input type="text" id="request" /><br />
+        <h3>Signature over printed name</h3>
+      </div>
+      <div>
+        <label for="approved">Approved by</label>
+        <input type="text" id="approved" />
+        <h3>Signature over printed name</h3>
+      </div>
+    </form>
+    <h1>For HR’s use only</h1>
+    <form>
+      <input type="checkbox" id="filed" value="Filed" />
+      <label for="filed"> Filed</label>
+      <input type="checkbox" id="Cancelled" value="Cancelled" />
+      <label for="Cancelled">Cancelled</label>
+      <input type="checkbox" id="Hold" value="Hold" />
+      <label for="Hold"> Hold</label>
+      <input type="checkbox" id="Disapproved" value="Disapproved" />
+      <label for="Disapproved">Disapproved</label>
+    </form>
+    <input type="submit" value="Validate!" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script>
+      jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid",
+      });
+      $("#myform").validate({
+        rules: {
+          department: {
+            required: true,
+            step: 10,
+          },
+          date: {
+            required: true,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
