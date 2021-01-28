@@ -4,23 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet " href="index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body style="border: 3px solid grey; padding: 40px; margin: auto; width: 60%">
     <form id="myform">
       <label for="department">Requesting Department</label>
-      <input type="text" id="department" name="department" /><br /><br />
+      <input type="text" id="department" name="department" />
+      <p style="color: red" id="p"></p>
       <label for="dates">Date Requested</label>
       <input type="date" id="dates" /><br /><br />
       <label for="title">Postition / Title</label>
-      <input type="text" id="title" /><br /><br />
+      <p style="color: red" id="p2"></p>
+      <input type="text" id="title" name="title" /><br /><br />
+
       <label for="dater">Date Required</label>
       <input type="date" id="dater" name="Date Required" /><br /><br />
       <form id="emp-typ">
-        <label for="type">Employment Type</label><br /><br />
-        <input type="radio" id="name" name="type" value="Student Trainee" />
+        <label for="emp-type">Employment Type</label><br /><br />
+        <input
+          type="radio"
+          id="emp-type"
+          name="emp-type"
+          value="Student Trainee"
+        />
         <label for="name">Student Trainee</label><br />
-        <input type="radio" id="female" name="type" value="female" />
+        <input type="radio" id="other" name="type" value="other" />
         <label for="female">Project Hire</label><br />
         <input type="radio" id="other" name="type" value="other" />
         <label for="other">Contractual</label><br />
@@ -29,20 +47,23 @@
       </form>
 
       <label for="job-spec">Job Specification</label><br />
+      <p style="color: red" id="p3"></p>
       <input type="text" id="job-spec" /><br /><br />
 
       <label for="reason">Reason for Vacancy</label><br />
+      <p style="color: red" id="p4"></p>
       <input type="text" id="reason" /><br /><br />
 
       <div>
         <label for="breif"
           >Brief description of Duties/ Attach the Job Description</label
         ><br />
-        <input type="text" id="brief" /><br /><br />
+        <p style="color: red" id="p5"></p>
+        <input type="text" id="brief" name="breif" /><br /><br />
       </div>
       <div>
-        <label for="lname">Nature of Request</label><br />
-        <select name="cars" id="cars">
+        <label for="rew">Nature of Request</label><br />
+        <select name="rew" id="rew">
           <option value="New">New</option>
           <option value="Addition">Addition</option>
           <option value="Replacement">Replacement</option></select
@@ -80,11 +101,13 @@
     <form>
       <div>
         <label for="request">Requested by</label>
+        <p style="color: red" id="p6"></p>
         <input type="text" id="request" /><br />
         <h3>Signature over printed name</h3>
       </div>
       <div>
         <label for="approved">Approved by</label>
+        <p style="color: red" id="p7"></p>
         <input type="text" id="approved" />
         <h3>Signature over printed name</h3>
       </div>
@@ -100,26 +123,11 @@
       <input type="checkbox" id="Disapproved" value="Disapproved" />
       <label for="Disapproved">Disapproved</label>
     </form>
-    <input type="submit" value="Validate!" />
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script>
-      jQuery.validator.setDefaults({
-        debug: true,
-        success: "valid",
-      });
-      $("#myform").validate({
-        rules: {
-          department: {
-            required: true,
-            step: 10,
-          },
-          date: {
-            required: true,
-          },
-        },
-      });
-    </script>
+    <br /><br />
+    <input type="submit" id="submit" name="" placeholder="Name" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <script src="index.js"></script>
   </body>
 </html>
